@@ -7,7 +7,21 @@ ReviewRateable system for laravel 5.*
 
 ## Installation
 
-First, pull in the package through Composer.
+First, add your js composer.json
+
+```php
+"repositories": {
+        ----- Above ----
+        "source": {
+          "url": "https://github.com/huuloc4193/laravel-reviewRateable",
+          "type": "vcs"
+        }
+        ----- Below ----
+    }
+```
+
+
+Secondary, pull in the package through Composer.
 
 ```js
 composer require trexology/reviewrateable
