@@ -9,11 +9,19 @@
             "email": "trexlim@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/huuloc4193/laravel-reviewRateable"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
-        "trexology/reviewrateable": "dev-master",
         "illuminate/support": "~5.0|^6.0"
+    },
+     "require-dev": {
+        "trexology/reviewrateable": "dev-master"
     },
     "autoload": {
         "psr-4": {
