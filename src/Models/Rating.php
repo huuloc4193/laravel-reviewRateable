@@ -79,4 +79,15 @@ class Rating extends Model
     {
         return static::find($id)->delete();
     }
+    public function getComment($item_id)
+    {
+        return static::where([
+                            ['reviewrateable_type','App\Models\Items'],
+                            ['author_type','App\User'],
+                            ['status','on'],
+                            ['reviewrateable_id',$item_id]
+                                ])
+
+                        ->orderBy('created_at', 'DESC')->paginate(9);
+    }
 }
