@@ -12,6 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
+        "trexology/reviewrateable": "dev-master",
         "illuminate/support": "~5.0|^6.0"
     },
     "autoload": {
