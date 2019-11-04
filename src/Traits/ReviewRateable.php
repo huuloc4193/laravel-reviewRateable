@@ -10,8 +10,12 @@ trait ReviewRateable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
-    public function ratings()
+    public function ratings($status = 'on')
     {
+        //them status de kiem duyet
+        if ($status == 'on') {
+            return $this->morphMany(Rating::class, 'reviewrateable')->where('status', $status);
+        }
         return $this->morphMany(Rating::class, 'reviewrateable');
     }
 
@@ -19,15 +23,15 @@ trait ReviewRateable
      *
      * @return mix
      */
-    public function averageRating($round= null)
+    public function averageRating($round= null, $status ='on')
     {
         if ($round) {
-            return $this->ratings()
+            return $this->ratings($status)
               ->selectRaw('ROUND(AVG(rating), '.$round.') as averageReviewRateable')
               ->pluck('averageReviewRateable')->first();
         }
 
-        return $this->ratings()
+        return $this->ratings($status)
           ->selectRaw('AVG(rating) as averageReviewRateable')
           ->pluck('averageReviewRateable')->first();
     }
@@ -110,5 +114,14 @@ trait ReviewRateable
        "avg" => $this->averageRating($round),
        "count" => $this->countRating(),
      ];
+    }
+    /**
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function getComment($item_id)
+    {
+        return (new Rating())->getComment($item_id);
     }
 }
