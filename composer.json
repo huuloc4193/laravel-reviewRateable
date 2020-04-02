@@ -9,12 +9,6 @@
             "email": "locdh41@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/huuloc4193/laravel-reviewRateable"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
