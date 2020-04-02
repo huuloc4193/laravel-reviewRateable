@@ -17,7 +17,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "illuminate/support": "^5.0|^6.0|^7.0"
     },
      "require-dev": {
         "trexology/reviewrateable": "dev-master"
